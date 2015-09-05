@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.awt.event.WindowEvent;
+
 import javax.swing.JFrame;
 
 public class Ventana extends JFrame{
@@ -38,5 +40,5 @@ public class Ventana extends JFrame{
 	public void mostrar(){
 		setVisible(true);
 	}
-
+	
 }
