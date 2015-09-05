@@ -3,30 +3,36 @@ package interfaz;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
+
 
 public class Ventana extends JFrame{
 	
 	private Papel papel;
 	private int X;
 	private int Y;
-	private JMenuBar miMenu;
+	private BarraMenu miMenu;
 	
 	public Ventana(){
 		papel = new Papel();
 		papel.setLayout(null);
 		papel.cargarImagen();
-		miMenu = new JMenuBar();
+		miMenu = new BarraMenu();
 		
 		X = 1000;
 		Y = 600;
-		centrarVentana();
+		this.centrarVentana();
 		
 		
-		add(papel);
+		this.add(papel);
+		this.prepararMenu();
 		this.setJMenuBar(miMenu);
 	}
 	
+	private void prepararMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private void centrarVentana() {
 		// TODO Auto-generated method stub
 		int anchoW = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
