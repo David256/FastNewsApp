@@ -39,12 +39,13 @@ public class Ventana extends JFrame{
 	
 	public void prepararMenu() {
 		// TODO Auto-generated method stub
+		//objetos de JMenu
 		menuArchivo = new JMenu("Archivo");
 		menuAcceso = new JMenu("Acceso");
 		menuOpciones = new JMenu("Opciones");
 		menuAyuda = new JMenu("Ayuda");
 		
-		
+				
 		
 		//introducimos a la barra de menu
 		miMenu.add(menuArchivo);
