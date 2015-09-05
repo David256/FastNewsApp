@@ -28,12 +28,12 @@ public class Ventana extends JFrame{
 		this.setJMenuBar(miMenu);
 	}
 	
-	private void prepararMenu() {
+	public void prepararMenu() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	private void centrarVentana() {
+	public void centrarVentana() {
 		// TODO Auto-generated method stub
 		int anchoW = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 		int altoW = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
