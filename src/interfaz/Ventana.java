@@ -45,7 +45,11 @@ public class Ventana extends JFrame{
 		menuOpciones = new JMenu("Opciones");
 		menuAyuda = new JMenu("Ayuda");
 		
-				
+		//objeto JMenuItem
+		menuISalir = new JMenuItem("Salir");
+		
+		//añadiendo los item en el menu
+		menuArchivo.add(menuISalir);
 		
 		//introducimos a la barra de menu
 		miMenu.add(menuArchivo);
