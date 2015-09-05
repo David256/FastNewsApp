@@ -20,7 +20,6 @@ public class FastNews {
 		ventana.addWindowListener(new WindowAdapter(){
 			@Override
 			public void windowClosing(WindowEvent e){
-				System.out.print("kvnsdkjvds");
 				cerrar();
 			}
 		});
