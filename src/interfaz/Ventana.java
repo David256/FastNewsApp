@@ -3,6 +3,7 @@ package interfaz;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
 
 
 public class Ventana extends JFrame{
@@ -11,6 +12,11 @@ public class Ventana extends JFrame{
 	private int X;
 	private int Y;
 	private BarraMenu miMenu;
+	////////
+	private JMenu menuArchivo;
+	private JMenu menuAcceso;
+	private JMenu menuOpciones;
+	private JMenu menuAyuda;
 	
 	public Ventana(){
 		papel = new Papel();
@@ -30,6 +36,16 @@ public class Ventana extends JFrame{
 	
 	public void prepararMenu() {
 		// TODO Auto-generated method stub
+		menuArchivo = new JMenu("Archivo");
+		menuAcceso = new JMenu("Acceso");
+		menuOpciones = new JMenu("Opciones");
+		menuAyuda = new JMenu("Ayuda");
+		
+		//introducimos a la barra de menu
+		miMenu.add(menuArchivo);
+		miMenu.add(menuAcceso);
+		miMenu.add(menuOpciones);
+		miMenu.add(menuAyuda);
 		
 	}
 
