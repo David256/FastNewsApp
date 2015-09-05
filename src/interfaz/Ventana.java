@@ -4,6 +4,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 
 public class Ventana extends JFrame{
@@ -17,6 +18,8 @@ public class Ventana extends JFrame{
 	private JMenu menuAcceso;
 	private JMenu menuOpciones;
 	private JMenu menuAyuda;
+	
+	private JMenuItem menuISalir;
 	
 	public Ventana(){
 		papel = new Papel();
@@ -40,6 +43,8 @@ public class Ventana extends JFrame{
 		menuAcceso = new JMenu("Acceso");
 		menuOpciones = new JMenu("Opciones");
 		menuAyuda = new JMenu("Ayuda");
+		
+		
 		
 		//introducimos a la barra de menu
 		miMenu.add(menuArchivo);
