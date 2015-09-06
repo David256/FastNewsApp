@@ -36,7 +36,7 @@ public class FastNews {
 		}
 	}
 	public void basura(){
-		System.out.println("Metodos basura clase");
+		System.out.println("Metodos basura clase ");
 		System.out.println("Metodos basura para forzar el push de esta clase");
 		System.out.println("Metodos basura para forzar el push de esta clase");
 		System.out.println("Metodos basura para forzar el push de esta clase");
