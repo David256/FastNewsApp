@@ -8,6 +8,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 
 public class menuAccion implements ActionListener, ItemListener{
@@ -21,6 +22,15 @@ public class menuAccion implements ActionListener, ItemListener{
 		// TODO Auto-generated method stub
 		if(elEvent.getSource() == Ventana.menuISalir){
 			System.exit(0);
+		}
+		if(elEvent.getSource() == Ventana.menuIActualizar){
+			JOptionPane.showMessageDialog(null, "Funcion de actualizar");
+		}
+		if(elEvent.getSource() == Ventana.menuIInformacion){
+			JOptionPane.showMessageDialog(null, "Funcion de informacion");
+		}
+		if(elEvent.getSource() == Ventana.menuISobre){
+			JOptionPane.showMessageDialog(null, "Funcion de Sobre");
 		}
 	}
 
