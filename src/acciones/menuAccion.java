@@ -1,5 +1,7 @@
 package acciones;
 
+import interfaz.Ventana;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -17,7 +19,7 @@ public class menuAccion implements ActionListener, ItemListener{
 	@Override
 	public void actionPerformed(ActionEvent elEvent) {
 		// TODO Auto-generated method stub
-		if(elEvent.getSource() == menuItem){
+		if(elEvent.getSource() == Ventana.menuISalir){
 			System.exit(0);
 		}
 	}
