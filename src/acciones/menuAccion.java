@@ -30,7 +30,7 @@ public class menuAccion implements ActionListener, ItemListener{
 			JOptionPane.showMessageDialog(null, "Funcion de informacion");
 		}
 		if(elEvent.getSource() == Ventana.menuISobre){
-			JOptionPane.showMessageDialog(null, "Funcion de Sobre");
+			JOptionPane.showMessageDialog(null, "Funcion de Sobre la aplicacion");
 		}
 	}
 
