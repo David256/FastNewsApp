@@ -26,13 +26,19 @@ public class FastNews {
 		
 	}
 	public static void cerrar(){
-		//funcion encargada de gestionar el cierre de la aplicacion
-		Object [] opciones = {"Irme", "Me arrepent�"};
-		int eleccion = JOptionPane.showOptionDialog(ventana, "Realmente quieres irte de la aplicaci�n???", "Mensaje de Fast News App",
-				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Irme");
+		//funcion encargada de gestionar el cierre de la aplicacion y control
+		Object [] opciones = {"Irse", "Me arrepentí"};
+		int eleccion = JOptionPane.showOptionDialog(ventana, "Realmente quieres irte de la aplicación???", "Mensaje de Fast News App",
+				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opciones, "Irse");
 		if(eleccion == JOptionPane.YES_OPTION){
 			System.exit(0);
 		}
+	}
+	public void basura(){
+		System.out.println("Métodos basura para forzar el push de esta clase");
+		System.out.println("Métodos basura para forzar el push de esta clase");
+		System.out.println("Métodos basura para forzar el push de esta clase");
+		System.out.println("Métodos basura para forzar el push de esta clase");
 	}
 	
 	
