@@ -14,14 +14,14 @@ public class menuAccion implements ActionListener, ItemListener{
 	@Override
 	public void actionPerformed(ActionEvent elEvent) {
 		// TODO Auto-generated method stub
-		System.out.println("Evento Accion: "+elEvent.getActionCommand());
+		System.out.println("Evento Accion");
 		
 	}
 
 	@Override
 	public void itemStateChanged(ItemEvent elItem) {
 		// TODO Auto-generated method stub
-		System.out.println("Evento Item: " + elItem.getItem().toString());
+		System.out.println("Evento Item");
 	}
 
 }
