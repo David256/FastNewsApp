@@ -1,14 +1,18 @@
 package interfaz;
 
+import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import acciones.menuAccion;
+
 
 public class Ventana extends JFrame{
 	
+		
 	private Papel papel;
 	private int X;
 	private int Y;
@@ -19,7 +23,10 @@ public class Ventana extends JFrame{
 	private JMenu menuOpciones;
 	private JMenu menuAyuda;
 	
-	private JMenuItem menuISalir;
+	public static JMenuItem menuISalir;
+	public static JMenuItem menuISobre;
+	public static JMenuItem menuIActualizar;
+	public static JMenuItem menuIInformacion;
 	
 	public Ventana(){
 		papel = new Papel();
@@ -47,9 +54,16 @@ public class Ventana extends JFrame{
 		
 		//objeto JMenuItem
 		menuISalir = new JMenuItem("Salir");
+		menuISobre = new JMenuItem("Sobre");
+		menuIActualizar = new JMenuItem("Actualizar");
+		menuIInformacion = new JMenuItem("Informacion");
 		
 		//añadiendo los item en el menu
 		menuArchivo.add(menuISalir);
+		
+		menuAyuda.add(menuISobre);
+		menuAyuda.add(menuIActualizar);
+		menuAyuda.add(menuIInformacion);
 		
 		//introducimos a la barra de menu
 		miMenu.add(menuArchivo);
@@ -57,6 +71,11 @@ public class Ventana extends JFrame{
 		miMenu.add(menuOpciones);
 		miMenu.add(menuAyuda);
 		
+		//añado evento a el menú salir
+		menuISalir.addActionListener(new menuAccion(menuISalir));
+		menuISobre.addActionListener(new menuAccion(menuISobre));
+		menuIActualizar.addActionListener(new menuAccion(menuIActualizar));
+		menuIInformacion.addActionListener(new menuAccion(menuIInformacion));
 	}
 
 	public void centrarVentana() {
