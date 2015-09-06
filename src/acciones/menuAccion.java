@@ -5,8 +5,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class menuAccion implements ActionListener, ItemListener{
+import javax.swing.JOptionPane;
 
+public class menuAccion implements ActionListener, ItemListener{
+	public menuAccion(){
+		JOptionPane.showMessageDialog(null, "acciones");
+	}
 	@Override
 	public void actionPerformed(ActionEvent elEvent) {
 		// TODO Auto-generated method stub
@@ -17,7 +21,7 @@ public class menuAccion implements ActionListener, ItemListener{
 	@Override
 	public void itemStateChanged(ItemEvent elItem) {
 		// TODO Auto-generated method stub
-		
+		System.out.println(elItem.getItem().toString());
 	}
 
 }
