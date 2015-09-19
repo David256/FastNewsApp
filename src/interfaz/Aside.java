@@ -2,6 +2,7 @@ package interfaz;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.*;
 
 import javax.swing.JPanel;
 
@@ -23,9 +24,9 @@ public class Aside extends JPanel{
 		// TODO Auto-generated method stub
 		X = x;
 		Y = y;
-		//calculamos la proporcion aurea para el ancho y el 95% para la altura
+		//calculamos la proporcion aurea para el ancho y el 9x% para la altura
 		int anchoPerfecto =(int)( x - (x * 0.618) );
-		int altoPerfecto = (int) (y * 0.95);
+		int altoPerfecto = (int) (y * 0.90);
 		setSize(anchoPerfecto, altoPerfecto);
 		
 		ancho = anchoPerfecto;
@@ -34,6 +35,9 @@ public class Aside extends JPanel{
 		int desplazamientoX = x - anchoPerfecto;
 		int desplazamientoY = 0;
 		setLocation(desplazamientoX, desplazamientoY);
+				
+		System.out.println("ancho perfecto: " + anchoPerfecto);
+		System.out.println("alto prefecto: " + altoPerfecto);
+		System.out.println("Desplazamiento X/Y : " + desplazamientoX + " / " + desplazamientoY);
 	}
-
 }

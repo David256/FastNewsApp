@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
@@ -29,16 +30,22 @@ public class Ventana extends JFrame{
 	public static JMenuItem menuIActualizar;
 	public static JMenuItem menuIInformacion;
 	
+	public static JLabel tituloListaCanales;
+	
 	public Ventana(){
 		papel = new Papel();
 		aside = new Aside();
 		papel.setLayout(null);
 		papel.cargarImagen();
 		miMenu = new BarraMenu();
+		tituloListaCanales = new JLabel();
 		
 		this.centrarVentana();
 		
 		aside.ubicar(X, Y);
+		aside.setLayout(null);
+		tituloListaCanales.setText("Lista de canales RSS");
+		aside.add(tituloListaCanales);
 		papel.add(aside);
 		this.add(papel);
 		this.prepararMenu();
