@@ -14,6 +14,7 @@ public class Ventana extends JFrame{
 	
 		
 	private Papel papel;
+	private Aside aside;
 	private int X;
 	private int Y;
 	private BarraMenu miMenu;
