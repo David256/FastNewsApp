@@ -15,8 +15,8 @@ public class Ventana extends JFrame{
 		
 	private Papel papel;
 	private Aside aside;
-	private int X;
-	private int Y;
+	private final int X = 1000;
+	private final int Y = 600;
 	private BarraMenu miMenu;
 	////////
 	private JMenu menuArchivo;
@@ -36,8 +36,6 @@ public class Ventana extends JFrame{
 		papel.cargarImagen();
 		miMenu = new BarraMenu();
 		
-		X = 1000;
-		Y = 600;
 		this.centrarVentana();
 		
 		aside.setLocation(X, Y);
