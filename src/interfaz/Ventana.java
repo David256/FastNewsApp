@@ -31,6 +31,7 @@ public class Ventana extends JFrame{
 	
 	public Ventana(){
 		papel = new Papel();
+		aside = new Aside();
 		papel.setLayout(null);
 		papel.cargarImagen();
 		miMenu = new BarraMenu();
@@ -39,7 +40,7 @@ public class Ventana extends JFrame{
 		Y = 600;
 		this.centrarVentana();
 		
-		
+		papel.add(aside);
 		this.add(papel);
 		this.prepararMenu();
 		this.setJMenuBar(miMenu);
