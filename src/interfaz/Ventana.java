@@ -40,6 +40,7 @@ public class Ventana extends JFrame{
 		Y = 600;
 		this.centrarVentana();
 		
+		aside.setLocation(X, Y);
 		papel.add(aside);
 		this.add(papel);
 		this.prepararMenu();
