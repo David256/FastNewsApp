@@ -40,4 +40,25 @@ public class Aside extends JPanel{
 		System.out.println("alto prefecto: " + altoPerfecto);
 		System.out.println("Desplazamiento X/Y : " + desplazamientoX + " / " + desplazamientoY);
 	}
+	//intento de mejorar el metodo ubicar
+	public void ubicar() {
+		// TODO Auto-generated method stub
+		X = Ventana.X;
+		Y = Ventana.Y;
+		//calculamos la proporcion aurea para el ancho y el 9x% para la altura
+		int anchoPerfecto =(int)( X - (X * 0.618) );
+		int altoPerfecto = (int) (Y * 0.90);
+		setSize(anchoPerfecto, altoPerfecto);
+		
+		ancho = anchoPerfecto;
+		alto = altoPerfecto;
+		
+		int desplazamientoX = X - anchoPerfecto;
+		int desplazamientoY = 0;
+		setLocation(desplazamientoX, desplazamientoY);
+				
+		System.out.println("ancho perfecto: " + anchoPerfecto);
+		System.out.println("alto prefecto: " + altoPerfecto);
+		System.out.println("Desplazamiento X/Y : " + desplazamientoX + " / " + desplazamientoY);
+	}
 }
