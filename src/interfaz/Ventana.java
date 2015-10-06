@@ -16,8 +16,8 @@ public class Ventana extends JFrame{
 		
 	private Papel papel; // el papel tapiz de la app
 	private Aside aside; // campo lateral que tiene la lista de canales
-	private final int X = 1000;
-	private final int Y = 600;
+	static final int X = 1000;
+	static final int Y = 600;
 	private BarraMenu miMenu; // barra de menu, pendiente modificar
 	//////// Lista de menues
 	private JMenu menuArchivo;
@@ -42,7 +42,8 @@ public class Ventana extends JFrame{
 		
 		this.centrarVentana();
 		
-		aside.ubicar(X, Y);
+		//aside.ubicar(X, Y);
+		aside.ubicar();
 		aside.setLayout(null);
 		tituloListaCanales.setText("Lista de canales RSS");
 		aside.add(tituloListaCanales);
