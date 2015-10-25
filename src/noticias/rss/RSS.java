@@ -13,6 +13,7 @@ import org.jdom2.input.SAXBuilder; // |
 public class RSS {
 	
 	public void cargar(Canal canal){
+		String url = canal.getUrl();
 		
 	}
 
