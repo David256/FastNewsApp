@@ -5,11 +5,15 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import interfaz.Ventana;
+import noticias.rss.*;
+
+import org.xml.*;
 
 //clase necesaria para ejecutar el progama
 public class FastNews {
 	
 	static Ventana ventana;
+	static RSS rr;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,7 +28,7 @@ public class FastNews {
 				cerrar();
 			}
 		});
-		
+		rr.start();
 	}
 	public static void cerrar(){
 		//funcion encargada de gestionar el cierre de la aplicacion y control
