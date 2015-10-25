@@ -19,7 +19,7 @@ public class FastNews {
 	
 	static Ventana ventana;
 	static RSS rr;
-	private static Vector canales;
+	private static Vector<Canal> canales=null;
 	static String SutaDato = "/predata/fileObjectRSS.obj"; 
 	
 	public static void main(String[] args) {
@@ -38,10 +38,17 @@ public class FastNews {
 		//cargamos los rss del archivo de rss llamado 
 		try{
 			canales = cargaLocales();
+			//vamos a cargar pues
+			
+			if(!canales.isEmpty()){
+				rr.cargarURL((canales.lastElement()));
+			}
+			
 		}catch(Exception e){
 			//error, por algo
 			System.err.println("Error al cargar locales");
 		}
+		
 	}
 	
 	private static Vector cargaLocales() throws ClassNotFoundException, IOException {

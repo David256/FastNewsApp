@@ -1,8 +1,11 @@
 package noticias.rss;
+
+import java.io.Serializable;
+
 //esta será una clase de datos, eso espero
 
 
-public class Canal {
+public class Canal implements Serializable{
 	private String url;
 	private String titulo;
 	

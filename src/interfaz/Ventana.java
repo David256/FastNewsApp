@@ -66,7 +66,8 @@ public class Ventana extends JFrame{
 		aside.add(tituloListaCanales, BorderLayout.PAGE_START);
 		aside.add(listaCanales, BorderLayout.CENTER);
 		
-		
+		logoMain.setFont(new Font("verdana", Font.BOLD, 24));
+		logoMain.setForeground(Color.WHITE);
 		logoMain.setBounds(10, 10, 500, 50);
 		papel.add(logoMain);
 		papel.add(aside);
