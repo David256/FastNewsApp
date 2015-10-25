@@ -3,32 +3,15 @@ package noticias.rss;
 
 import java.io.File;
 
-import org.w3c.dom.*;
-import javax.xml.parsers.*;
+import org.jdom2.Document;         // |
+import org.jdom2.Element;          // |\ Librerías
+import org.jdom2.JDOMException;    // |/ JDOM
+import org.jdom2.input.SAXBuilder; // |
 
 public class RSS {
 
-	public void start() {
-		// TODO Auto-generated method stub
-		DocumentBuilderFactory dbf;
-		DocumentBuilder db;
-		Document dom = null;
-		NodeList elNode;
-		
-		
-		dbf = DocumentBuilderFactory.newInstance();
-		
-		try{
-			db = dbf.newDocumentBuilder();
-			dom = db.parse("/predata/unrss.rss");
-		}catch(Exception s){
-			System.err.println("Un error fatal");
-		}
-		
-		Element rootElement = dom.getDocumentElement();
-		elNode = rootElement.getElementsByTagName("channel");
-		
-		
+	public void starter() {
+		// TODO Auto-generated method stub		
 	}
 
 }

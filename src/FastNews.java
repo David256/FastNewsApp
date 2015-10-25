@@ -28,7 +28,7 @@ public class FastNews {
 				cerrar();
 			}
 		});
-		rr.start();
+		rr.starter();
 	}
 	public static void cerrar(){
 		//funcion encargada de gestionar el cierre de la aplicacion y control
