@@ -14,6 +14,7 @@ public class FastNews {
 	
 	static Ventana ventana;
 	static RSS rr;
+	private Canal [] canales;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -28,7 +29,7 @@ public class FastNews {
 				cerrar();
 			}
 		});
-		rr.starter();
+		//cargamos los rss del archivo de rss llamado 
 	}
 	public static void cerrar(){
 		//funcion encargada de gestionar el cierre de la aplicacion y control
