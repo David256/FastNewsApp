@@ -1,6 +1,8 @@
 package acciones;
 
+import interfaz.CajaDialogo;
 import interfaz.ListaCanales;
+import interfaz.Ventana;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,9 +19,15 @@ public class BtnAsideAccion implements ActionListener{
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent elCLick) {
+	public void actionPerformed(ActionEvent elClick) {
 		// TODO Auto-generated method stub
-		System.out.println("[Escucha][BTN][ASIDE] se pincho action");
+		System.out.println("[Escucha][BTN][ASIDE] se pincho action. ");
+		
+		if(elClick.getSource()==Ventana.abtnAgregar){
+			CajaDialogo.showInputDialog("");
+		}
+		if(elClick.getSource()==Ventana.abtnEliminar){}
+		if(elClick.getSource()==Ventana.abtnEditar){}
 	}
 
 }

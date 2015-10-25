@@ -41,9 +41,9 @@ public class Ventana extends JFrame{
 	private ListaCanales listaCanales;
 	
 	//botones para el aside
-	private BotonAside abtnEditar;
-	private BotonAside abtnEliminar;
-	private BotonAside abtnAgregar;
+	public static BotonAside abtnEditar;
+	public static BotonAside abtnEliminar;
+	public static BotonAside abtnAgregar;
 	
 	//para la lista de canales
 	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
