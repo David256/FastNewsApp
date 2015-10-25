@@ -14,17 +14,17 @@ import acciones.menuAccion;
 public class Ventana extends JFrame{
 	
 		
-	private Papel papel;
-	private Aside aside;
-	private final int X = 1000;
-	private final int Y = 600;
-	private BarraMenu miMenu;
-	////////
+	private Papel papel; // el papel tapiz de la app
+	private Aside aside; // campo lateral que tiene la lista de canales
+	static final int X = 1000;
+	static final int Y = 600;
+	private BarraMenu miMenu; // barra de menu, pendiente modificar
+	//////// Lista de menues
 	private JMenu menuArchivo;
 	private JMenu menuAcceso;
 	private JMenu menuOpciones;
 	private JMenu menuAyuda;
-	
+	// lista de submenues
 	public static JMenuItem menuISalir;
 	public static JMenuItem menuISobre;
 	public static JMenuItem menuIActualizar;
@@ -42,7 +42,8 @@ public class Ventana extends JFrame{
 		
 		this.centrarVentana();
 		
-		aside.ubicar(X, Y);
+		//aside.ubicar(X, Y);
+		aside.ubicar();
 		aside.setLayout(null);
 		tituloListaCanales.setText("Lista de canales RSS");
 		aside.add(tituloListaCanales);
@@ -66,7 +67,7 @@ public class Ventana extends JFrame{
 		menuIActualizar = new JMenuItem("Actualizar");
 		menuIInformacion = new JMenuItem("Informacion");
 		
-		//añadiendo los item en el menu
+		//aÃ±adiendo los item en el menu
 		menuArchivo.add(menuISalir);
 		
 		menuAyuda.add(menuISobre);
@@ -79,7 +80,7 @@ public class Ventana extends JFrame{
 		miMenu.add(menuOpciones);
 		miMenu.add(menuAyuda);
 		
-		//añado evento a el menú salir
+		//aÃ±ado evento a el menÃº salir
 		menuISalir.addActionListener(new menuAccion(menuISalir));
 		menuISobre.addActionListener(new menuAccion(menuISobre));
 		menuIActualizar.addActionListener(new menuAccion(menuIActualizar));
