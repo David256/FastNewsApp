@@ -30,24 +30,28 @@ public class Ventana extends JFrame{
 	public static JMenuItem menuIActualizar;
 	public static JMenuItem menuIInformacion;
 	
-	public static JLabel tituloListaCanales;
+	private JLabel tituloListaCanales;
+	private JLabel logoMain;
 	
 	public Ventana(){
 		papel = new Papel();
 		aside = new Aside();
-		papel.setLayout(null);
 		papel.cargarImagen();
 		miMenu = new BarraMenu();
 		tituloListaCanales = new JLabel();
+		logoMain = new JLabel("Fast News App");
 		
 		this.centrarVentana();
 		
-		//aside.ubicar(X, Y);
 		aside.ubicar();
 		aside.setLayout(null);
 		tituloListaCanales.setText("Lista de canales RSS");
+		tituloListaCanales.setBounds(10, 10, 500, 50);
 		aside.add(tituloListaCanales);
+		logoMain.setBounds(10, 10, 500, 50);
+		papel.add(logoMain);
 		papel.add(aside);
+		papel.setLayout(null);
 		this.add(papel);
 		this.prepararMenu();
 		this.setJMenuBar(miMenu);
