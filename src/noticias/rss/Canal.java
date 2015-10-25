@@ -1,3 +1,4 @@
+package noticias.rss;
 //esta será una clase de datos, eso espero
 
 
