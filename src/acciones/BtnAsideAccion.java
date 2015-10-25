@@ -24,7 +24,7 @@ public class BtnAsideAccion implements ActionListener{
 		System.out.println("[Escucha][BTN][ASIDE] se pincho action. ");
 		
 		if(elClick.getSource()==Ventana.abtnAgregar){
-			CajaDialogo.showInputDialog("");
+			new CajaDialogo().agregarCanal();
 		}
 		if(elClick.getSource()==Ventana.abtnEliminar){}
 		if(elClick.getSource()==Ventana.abtnEditar){}
