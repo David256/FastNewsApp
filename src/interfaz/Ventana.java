@@ -36,7 +36,7 @@ public class Ventana extends JFrame{
 	
 	private JLabel tituloListaCanales;
 	private JLabel logoMain;
-	private JList listaCanales;
+	private ListaCanales listaCanales;
 	
 	//para la lista de canales
 	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
@@ -60,7 +60,7 @@ public class Ventana extends JFrame{
 		tituloListaCanales.setFont(new Font("verdana", Font.BOLD, 20));
 		tituloListaCanales.setForeground(new Color(33,33,33));
 		
-		listaCanales = new JList(nombreCorto);
+		listaCanales = new ListaCanales(nombreCorto);
 		
 		aside.add(tituloListaCanales, BorderLayout.PAGE_START);
 		aside.add(listaCanales, BorderLayout.CENTER);
