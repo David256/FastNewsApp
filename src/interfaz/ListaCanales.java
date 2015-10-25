@@ -14,6 +14,8 @@ public class ListaCanales extends JList{
 		this.setSize(350, 400);
 		this.setLocation(8, 50);
 		this.setFont(new Font(Font.SANS_SERIF,Font.CENTER_BASELINE , 18));
+		
+		//cambio de color a el JList
 		this.setForeground(new Color(107, 72, 1));
 		this.setBackground(new Color(203, 198, 176));
 		this.setSelectionBackground(new Color(0,0,0));
