@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -38,6 +39,11 @@ public class Ventana extends JFrame{
 	private JLabel logoMain;
 	private ListaCanales listaCanales;
 	
+	//botones para el aside
+	private JButton abtnEditar;
+	private JButton abtnEliminar;
+	private JButton abtnAgregar;
+	
 	//para la lista de canales
 	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
 	
@@ -63,8 +69,8 @@ public class Ventana extends JFrame{
 		
 		listaCanales = new ListaCanales(nombreCorto);
 		
-		aside.add(tituloListaCanales, BorderLayout.PAGE_START);
-		aside.add(listaCanales, BorderLayout.CENTER);
+		aside.add(tituloListaCanales);
+		aside.add(listaCanales);
 		
 		logoMain.setFont(new Font("verdana", Font.BOLD, 24));
 		logoMain.setForeground(Color.WHITE);
