@@ -6,18 +6,19 @@ import javax.swing.JOptionPane;
 
 import interfaz.Ventana;
 
-
+//clase necesaria para ejecutar el progama
 public class FastNews {
 	
 	static Ventana ventana;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ventana = new Ventana();
+		ventana = new Ventana(); //este objeto maneja la ventana
 		ventana.mostrar();
 		ventana.setTitle("Fast News App - by David");
 		ventana.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		ventana.addWindowListener(new WindowAdapter(){
+			//manejamos el evento de darle click al boton cerrar
 			@Override
 			public void windowClosing(WindowEvent e){
 				cerrar();
