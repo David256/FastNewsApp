@@ -53,10 +53,11 @@ public class Ventana extends JFrame{
 		this.centrarVentana();
 		
 		aside.ubicar();
-		aside.setLayout(new BorderLayout());
+		//aside.setLayout(new BorderLayout());
+		aside.setLayout(null); //este será el que se escojerá
 		//personalizamos el titulo de la lista de canales
 		tituloListaCanales.setText("Lista de canales RSS");
-		tituloListaCanales.setBounds(10, 10, 500, 50);
+		tituloListaCanales.setBounds(10, 5, 500, 50);
 		tituloListaCanales.setFont(new Font("verdana", Font.BOLD, 20));
 		tituloListaCanales.setForeground(new Color(33,33,33));
 		
