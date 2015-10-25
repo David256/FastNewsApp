@@ -10,7 +10,7 @@ import java.awt.event.ItemListener;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
-
+//esta clase se encarga de manejar los evento a menu de opciones
 public class menuAccion implements ActionListener, ItemListener{
 	private JMenuItem menuItem;
 
@@ -19,7 +19,7 @@ public class menuAccion implements ActionListener, ItemListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent elEvent) {
-		// TODO Auto-generated method stub
+		// revisamos que evento se genero, o sea, en que item.
 		if(elEvent.getSource() == Ventana.menuISalir){
 			System.exit(0);
 		}
