@@ -21,6 +21,18 @@ public class Canal {
 		this.titulo = titulo;
 	}
 	
+	public void setUrl(String url){
+		this.url = url;
+	}
+	public void setTitulo(String titulo){
+		this.titulo = titulo;
+	}
 	
+	public String getUrl(){
+		return this.url;
+	}
+	public String getTitulo(){
+		return this.titulo;
+	}
 	
 }
