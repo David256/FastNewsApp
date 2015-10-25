@@ -20,35 +20,21 @@ import org.jdom2.input.SAXBuilder; // |
 
 public class RSS {
 	
-	public void cargar(Canal canal){
+	public void cargarURL(Canal canal){
 		String sUrl = canal.getUrl();
 		String dato = "";
 		
-		try{
-			//abrimos conexion
-			URL url = new URL(sUrl);
-			URLConnection conexion = url.openConnection();
-			conexion.connect();
-			
-			//leemos el contenido
-			InputStream is = conexion.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			
-			char[] buffer = new char[1000];
-			int leido;
-			while((leido = br.read(buffer)) > 0){
-				dato = dato + leido;
-			}
-		}catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-	        e.printStackTrace();
-		}catch (IOException e) {
-	        // TODO Auto-generated catch block
-	        e.printStackTrace();	
-		}catch(Exception e){
-			System.out.println("Error desconocido ** : " + e.toString());
-		}
 		// dale
+		if(dato!=""){
+			cargarXML(dato);
+		}else{
+			System.err.println("Error, no puedo leer el archivos");
+		}
+		
+	}
+
+	private void cargarXML(String dato) {
+		//funcion encargada de leer el xml
 		
 		
 	}
