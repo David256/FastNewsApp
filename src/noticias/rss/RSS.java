@@ -13,6 +13,8 @@ public class RSS {
 		DocumentBuilderFactory dbf;
 		DocumentBuilder db;
 		Document dom = null;
+		NodeList elNode;
+		
 		
 		dbf = DocumentBuilderFactory.newInstance();
 		
@@ -24,7 +26,7 @@ public class RSS {
 		}
 		
 		Element rootElement = dom.getDocumentElement();
-		
+		elNode = rootElement.getElementsByTagName("channel");
 		
 		
 	}
