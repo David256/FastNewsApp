@@ -40,9 +40,9 @@ public class Ventana extends JFrame{
 	private ListaCanales listaCanales;
 	
 	//botones para el aside
-	private JButton abtnEditar;
-	private JButton abtnEliminar;
-	private JButton abtnAgregar;
+	private BotonAside abtnEditar;
+	private BotonAside abtnEliminar;
+	private BotonAside abtnAgregar;
 	
 	//para la lista de canales
 	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
@@ -68,6 +68,11 @@ public class Ventana extends JFrame{
 		tituloListaCanales.setForeground(new Color(33,33,33));
 		
 		listaCanales = new ListaCanales(nombreCorto);
+		
+		//agregamos btns de manejo del aside
+		abtnAgregar = new BotonAside("Agregar");
+		abtnEditar = new BotonAside("Editar");
+		abtnEliminar = new BotonAside("Eliminar");
 		
 		aside.add(tituloListaCanales);
 		aside.add(listaCanales);
