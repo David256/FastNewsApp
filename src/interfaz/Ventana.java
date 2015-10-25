@@ -14,6 +14,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import acciones.menuAccion;
+import acciones.BtnAsideAccion;
 
 
 public class Ventana extends JFrame{
@@ -82,6 +83,10 @@ public class Ventana extends JFrame{
 		aside.add(abtnAgregar);
 		aside.add(abtnEditar);
 		aside.add(abtnEliminar);
+		
+		abtnAgregar.addActionListener(new BtnAsideAccion(listaCanales));
+		abtnEditar.addActionListener(new BtnAsideAccion(listaCanales));
+		abtnEliminar.addActionListener(new BtnAsideAccion(listaCanales));
 		
 		aside.add(tituloListaCanales);
 		aside.add(listaCanales);
