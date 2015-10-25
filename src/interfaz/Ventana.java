@@ -73,6 +73,15 @@ public class Ventana extends JFrame{
 		abtnAgregar = new BotonAside("Agregar");
 		abtnEditar = new BotonAside("Editar");
 		abtnEliminar = new BotonAside("Eliminar");
+		//ubicamos cada uno
+		
+		abtnAgregar.setBounds(25, 460, 100, 30);
+		abtnEditar.setBounds(135, 460, 100, 30);
+		abtnEliminar.setBounds(245, 460, 100, 30);
+				
+		aside.add(abtnAgregar);
+		aside.add(abtnEditar);
+		aside.add(abtnEliminar);
 		
 		aside.add(tituloListaCanales);
 		aside.add(listaCanales);
