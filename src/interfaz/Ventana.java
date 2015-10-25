@@ -1,10 +1,14 @@
 package interfaz;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
@@ -32,6 +36,11 @@ public class Ventana extends JFrame{
 	
 	private JLabel tituloListaCanales;
 	private JLabel logoMain;
+	private JList listaCanales;
+	
+	//para la lista de canales
+	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
+	
 	
 	public Ventana(){
 		papel = new Papel();
@@ -44,10 +53,19 @@ public class Ventana extends JFrame{
 		this.centrarVentana();
 		
 		aside.ubicar();
-		aside.setLayout(null);
+		aside.setLayout(new BorderLayout());
+		//personalizamos el titulo de la lista de canales
 		tituloListaCanales.setText("Lista de canales RSS");
 		tituloListaCanales.setBounds(10, 10, 500, 50);
-		aside.add(tituloListaCanales);
+		tituloListaCanales.setFont(new Font("verdana", Font.BOLD, 20));
+		tituloListaCanales.setForeground(new Color(33,33,33));
+		
+		listaCanales = new JList(nombreCorto);
+		
+		aside.add(tituloListaCanales, BorderLayout.PAGE_START);
+		aside.add(listaCanales, BorderLayout.CENTER);
+		
+		
 		logoMain.setBounds(10, 10, 500, 50);
 		papel.add(logoMain);
 		papel.add(aside);
