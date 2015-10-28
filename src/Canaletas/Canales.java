@@ -9,8 +9,9 @@ import java.util.Vector;
 import noticias.rss.Canal;
 
 public class Canales {
-	private static Vector<Canal> canales=null;
+	private static Vector<Canal> listCanales=null;
 	private static String SutaDato = "/predata/fileObjectRSS.obj";
+	
 	public static void cargar() throws IOException, ClassNotFoundException {
 		File file = new File(SutaDato);
 		if(file.exists()){
@@ -21,7 +22,7 @@ public class Canales {
 				//vamos a cargar
 				while(true){
 					Canal unCanal = (Canal) ois.readObject();
-					canales.addElement(unCanal);
+					listCanales.addElement(unCanal);
 					//listo
 				}
 			}catch(IOException io){
@@ -38,5 +39,11 @@ public class Canales {
 	public static Canal dar() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public static void agregarRSS(String url, String titulo) {
+		// TODO Auto-generated method stub
+		Canal canal = new Canal(url, titulo);
+		listCanales.add(canal);
+		System.out.println("[Canales][agregarRSS] se agrego la Url y el Titulo.");
 	}
 }
