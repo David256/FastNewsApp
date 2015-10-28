@@ -35,7 +35,7 @@ public class ListaCanales extends JList implements Runnable{
 		
 		while(true){
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				System.err.println("[ListaCanales][RUN] Error en el Thread.sleep(n) _");
@@ -44,7 +44,13 @@ public class ListaCanales extends JList implements Runnable{
 			//vamos a actualidar eso
 			this.interno = Canales.getVector(); //guardamos el vector dentro del mismo
 			//de esta forma, creo que sería más facil para el actualizador de estado y lista
-			this.setListData(interno.toArray());
+			//this.setListData(interno.toArray());
+			String[] vTitulos = new String[interno.size()];
+			for(int i=0; i<interno.size(); i++){
+				vTitulos[i] = interno.get(i).getTitulo();
+			}//ahora guardamos
+			this.setListData(vTitulos);
+			
 			System.out.println("(Away)[ListaCanales] lanzamiento de thread exitoso");
 		}
 	}
