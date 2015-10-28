@@ -69,6 +69,7 @@ public class Ventana extends JFrame{
 		tituloListaCanales.setForeground(new Color(33,33,33));
 		
 		listaCanales = new ListaCanales(nombreCorto);
+		listaCanales.starter();
 		
 		//agregamos btns de manejo del aside
 		abtnAgregar = new BotonAside("Agregar");

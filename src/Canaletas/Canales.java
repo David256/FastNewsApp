@@ -15,9 +15,11 @@ public class Canales {
 	
 	private static Vector<Canal> listCanales=new Vector();
 	private static String SutaDato = "/predata/fileObjectRSS.obj";
+	static int semilla = 0;
 	
 	
 	public static void cargar() throws IOException, ClassNotFoundException {
+		//carga desde archivos a vector
 		File file = new File(SutaDato);
 		if(file.exists()){
 			ObjectInputStream ois = null;
@@ -42,6 +44,7 @@ public class Canales {
 		}
 	}
 	public static Canal dar() {
+		//da el ultimo valor
 		if(listCanales.size()>0){
 			return listCanales.lastElement();
 		}
@@ -74,5 +77,30 @@ public class Canales {
 			System.err.println("Error al asociar el archivo abierto de objetos con una clase de escritura");
 			e.printStackTrace();
 		}
+	}
+	
+	public static Canal sembrar(){
+		if(semilla++ <= listCanales.size()){
+			semilla = semilla + 1;
+			return listCanales.get(semilla);
+		}
+		return null;
+	}
+	public static void setGen(int valor){
+		semilla = valor;
+	}
+	public static int getGen(){
+		return semilla;
+	}
+	public static Vector<Canal> getVector(){
+		return listCanales;
+	}
+	public static String[] getVectorAsArray(){
+		String []buffered = new String[listCanales.size()];
+		
+		for(int i=0; i< listCanales.size(); i++){
+			buffered[i] = listCanales.get(i).getTitulo();
+		}
+		return buffered;
 	}
 }
