@@ -9,7 +9,7 @@ import java.util.Vector;
 import noticias.rss.Canal;
 
 public class Canales {
-	private static Vector<Canal> listCanales=null;
+	private static Vector<Canal> listCanales=new Vector();
 	private static String SutaDato = "/predata/fileObjectRSS.obj";
 	
 	public static void cargar() throws IOException, ClassNotFoundException {
@@ -42,8 +42,9 @@ public class Canales {
 	}
 	public static void agregarRSS(String url, String titulo) {
 		// TODO Auto-generated method stub
-		Canal canal = new Canal(url, titulo);
-		listCanales.add(canal);
+		Canal tube = new Canal(url, titulo);
+		System.out.println("[Canales][agregarRSS][toString] "+tube);
+		listCanales.add(tube);
 		System.out.println("[Canales][agregarRSS] se agrego la Url y el Titulo.");
 	}
 }
