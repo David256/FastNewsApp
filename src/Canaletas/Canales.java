@@ -53,7 +53,7 @@ public class Canales {
 		listCanales.add(tube);
 		System.out.println("[Canales][agregarRSS] se agrego la Url y el Titulo.");
 		//agregamos a la lista del archivo
-		guardarRSS(url, titulo);
+		//guardarRSS(url, titulo); no vamos a guardar hasta luego
 	}
 	private static void guardarRSS(String url, String titulo) {
 		// TODO Auto-generated method stub
