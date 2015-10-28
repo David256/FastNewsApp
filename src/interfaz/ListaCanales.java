@@ -37,15 +37,6 @@ public class ListaCanales extends JList implements Runnable{
 				e.printStackTrace();
 			}
 			//vamos a actualidar eso
-//			this.add(Canales.sembrar().getTitulo());
-			String listado[] = null;
-			int cantidad = Canales.getVectorAsArray().length;
-			listado = new String[cantidad + 1];
-			//listado tiene que tener lo anterior y lo nuevo juntos :3
-			for(int i=0; i<cantidad+1; i++){
-				listado[i] = Canales.getVectorAsArray()[i];
-			}
-			//this.setListData(listado);
 			this.setListData(Canales.getVector().toArray());
 			System.out.println("(Away)[ListaCanales] lanzamiento de thread exitoso");
 		}
