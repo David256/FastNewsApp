@@ -5,6 +5,9 @@ import java.awt.Font;
 import java.util.Vector;
 
 import javax.swing.JList;
+import javax.swing.JToolTip;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import noticias.rss.Canal;
 import Canaletas.Canales;
@@ -18,6 +21,24 @@ public class ListaCanales extends JList implements Runnable{
 	public ListaCanales(String[] valores){
 		super(valores);
 		estilizar();
+		
+		this.addListSelectionListener(new ListSelectionListener(){
+
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				// TODO Auto-generated method stub
+				if(getValueIsAdjusting()){
+					System.out.println("[ListaCanales][OnSelect] se selecciono algo");
+					/*
+					JToolTip bocadillo = new JToolTip();
+					bocadillo.setTipText("Hola?");
+					bocadillo.setBounds(200, 200, 500, 30);
+					bocadillo.setVisible(true);
+					*/
+				}
+			}
+			
+		});
 	}
 	public void estilizar(){
 		this.setSize(350, 400);
