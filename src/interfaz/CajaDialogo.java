@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import noticias.rss.Canal;
+
 
 
 public class CajaDialogo extends JFrame implements ActionListener{
@@ -96,6 +98,7 @@ public class CajaDialogo extends JFrame implements ActionListener{
 			System.out.println("[CajaDialogo][BTN] se \"agrego\" un elemento nuevo");
 			if(espera == "addRSS"){
 				//vamos a agregar entonces ::
+				
 			}
 		}
 	}
