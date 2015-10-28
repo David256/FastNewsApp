@@ -39,4 +39,10 @@ public class Canal implements Serializable{
 		return this.titulo;
 	}
 	
+	//to String method
+	
+	public String toString(){
+		return this.titulo + ", " + this.url;
+	}
+	
 }
