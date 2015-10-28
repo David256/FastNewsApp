@@ -40,14 +40,12 @@ public class Canales {
 		}
 	}
 	public static Canal dar() {
-		// TODO Auto-generated method stub
 		if(listCanales.size()>0){
 			return listCanales.lastElement();
 		}
 		return null;
 	}
 	public static void agregarRSS(String url, String titulo) {
-		// TODO Auto-generated method stub
 		Canal tube = new Canal(url, titulo);
 		System.out.println("[Canales][agregarRSS][toString] "+tube);
 		listCanales.add(tube);
@@ -56,7 +54,7 @@ public class Canales {
 		//guardarRSS(url, titulo); no vamos a guardar hasta luego
 	}
 	private static void guardarRSS(String url, String titulo) {
-		// TODO Auto-generated method stub
+		// Guarda el RSS en el archivo
 		try {
 			File saver = new File(SutaDato);
 			saver.createNewFile();
@@ -68,11 +66,9 @@ public class Canales {
 			salida.writeObject(new Canal(url, titulo));
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			System.err.println("Error al intentar abrir el archivo donde se guardan los objetos Canal");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.err.println("Error al asociar el archivo abierto de objetos con una clase de escritura");
 			e.printStackTrace();
 		}
