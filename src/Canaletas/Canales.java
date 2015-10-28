@@ -12,8 +12,10 @@ import java.util.Vector;
 import noticias.rss.Canal;
 
 public class Canales {
+	
 	private static Vector<Canal> listCanales=new Vector();
 	private static String SutaDato = "/predata/fileObjectRSS.obj";
+	
 	
 	public static void cargar() throws IOException, ClassNotFoundException {
 		File file = new File(SutaDato);
@@ -29,7 +31,7 @@ public class Canales {
 					//listo
 				}
 			}catch(IOException io){
-				
+				System.err.println("[Canales][Cargar] ya no puedo leer más objetos");
 			}finally{
 				ois.close();
 			}

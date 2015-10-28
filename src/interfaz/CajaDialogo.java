@@ -63,7 +63,7 @@ public class CajaDialogo extends JFrame{
 
 		//Agregamos los cammpo para que escriba el contenido
 		entrada[0] = new JTextField("http://");
-		entrada[1] = new JTextField("<titulo personalizado>");
+		entrada[1] = new JTextField("Titulo");
 		entrada[0].setBounds(80, 50, 280, 25);
 		entrada[1].setBounds(80, 90, 280, 25);
 		
