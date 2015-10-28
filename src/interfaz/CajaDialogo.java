@@ -16,7 +16,7 @@ import noticias.rss.Canal;
 
 
 
-public class CajaDialogo extends JFrame implements ActionListener{
+public class CajaDialogo extends JFrame{
 	
 	JPanel panel = new JPanel();
 	//normal
@@ -67,9 +67,6 @@ public class CajaDialogo extends JFrame implements ActionListener{
 		entrada[0].setBounds(80, 50, 280, 25);
 		entrada[1].setBounds(80, 90, 280, 25);
 		
-		//habilitamos un escucha a este btn, pero lo haremos aqui mismo para evitar problemas :D
-		boton[0].addActionListener((ActionListener) this);
-		
 		System.out.println("[CajaDialogo][agregarCanal] esperando acciones");
 		this.setTitle("Introducir valores del nuevo canal");
 		
@@ -84,26 +81,22 @@ public class CajaDialogo extends JFrame implements ActionListener{
 		estilizar();
 		this.add(panel);
 		this.setVisible(true);
+		
+		//habilitamos un escucha a este btn, pero lo haremos aqui mismo para evitar problemas :D
+		boton[0].addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae){
+				//vamos a agregar entonces ::
+				System.out.println("[CajaDialogo][BTN] se \"agrego\" un elemento nuevo");
+				System.out.println("[CajaDialogo] adding: " + entrada[0].getText() + ", " + entrada[1].getText());
+				Canales.agregarRSS(entrada[0].getText(), entrada[1].getText());
+				dispose();
+			}
+		});
 	}
 	
 	//funcion que pone bonito todo, lo que puede
 	public void estilizar(){
 		panel.setBackground(new Color(33,33,33));
 		panel.setForeground(Color.white);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getSource() == boton[0]){
-			System.out.println("[CajaDialogo][BTN] se \"agrego\" un elemento nuevo");
-			if(espera == "addRSS"){
-				//vamos a agregar entonces ::
-				System.out.println("[CajaDialogo] adding: " + entrada[0].getText() + ", " + entrada[1].getText());
-				Canales.agregarRSS(entrada[0].getText(), entrada[1].getText());
-				this.dispose();
-			}
-		}
-	}
-	
+	}	
 }
