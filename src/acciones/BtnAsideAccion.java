@@ -11,11 +11,12 @@ import java.awt.event.ItemListener;
 
 public class BtnAsideAccion implements ActionListener{
 	
-	ListaCanales listaCanales = null;
+	public ListaCanales listaCanales = null;
 		
 	public BtnAsideAccion(ListaCanales listaCanales) {
 		// TODO Auto-generated constructor stub
-		listaCanales.getSelectedIndex();
+		//listaCanales.getSelectedIndex();
+		this.listaCanales = listaCanales;
 	}
 
 	@Override
@@ -26,7 +27,11 @@ public class BtnAsideAccion implements ActionListener{
 		if(elClick.getSource()==Ventana.abtnAgregar){
 			new CajaDialogo().agregarCanal();
 		}
-		if(elClick.getSource()==Ventana.abtnEliminar){}
+		if(elClick.getSource()==Ventana.abtnEliminar){
+			int seleccionado = this.listaCanales.getSelectedIndex();
+			this.listaCanales.remove(seleccionado);
+			System.out.println("[Eliminar][Click] Se elimino el elemento "+seleccionado);
+		}
 		if(elClick.getSource()==Ventana.abtnEditar){}
 	}
 
