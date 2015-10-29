@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
 
 import acciones.menuAccion;
 import acciones.BtnAsideAccion;
@@ -23,9 +24,12 @@ public class Ventana extends JFrame{
 		
 	private Papel papel; // el papel tapiz de la app
 	private Aside aside; // campo lateral que tiene la lista de canales
+	private TheSection section; //la seccion de noticias, lo importante
 	static final int X = 1000;
 	static final int Y = 600;
 	private BarraMenu miMenu; // barra de menu, pendiente modificar
+	private JScrollPane scroll;
+	
 	//////// Lista de menues
 	private JMenu menuArchivo;
 	private JMenu menuAcceso;
@@ -49,10 +53,18 @@ public class Ventana extends JFrame{
 	//para la lista de canales
 	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
 	
+	//cosas de la parte principal
+	
 	
 	public Ventana(){
 		papel = new Papel();
 		aside = new Aside();
+		section = new TheSection();
+		
+		//vertical scroll para 
+		scroll = new JScrollPane();
+		scroll.setViewportView(section);
+		
 		papel.cargarImagen();
 		miMenu = new BarraMenu();
 		tituloListaCanales = new JLabel();
@@ -103,11 +115,17 @@ public class Ventana extends JFrame{
 		aside.add(tituloListaCanales);
 		aside.add(listaCanales);
 		
+		//configurar la section y el scroll
+		section.setBounds(20, 70, 570, 450);
+		scroll.setBounds(20, 70, 570, 450);
+		//section.setLayout(null);
+		
 		logoMain.setFont(new Font("verdana", Font.BOLD, 24));
 		logoMain.setForeground(Color.WHITE);
 		logoMain.setBounds(10, 10, 500, 50);
 		papel.add(logoMain);
 		papel.add(aside);
+		papel.add(scroll);
 		papel.setLayout(null);
 		this.add(papel);
 		this.prepararMenu();

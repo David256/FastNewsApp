@@ -35,6 +35,9 @@ public class ListaCanales extends JList implements Runnable{
 					bocadillo.setBounds(200, 200, 500, 30);
 					bocadillo.setVisible(true);
 					*/
+					int seleccionado = getSelectedIndex();
+					Canal temporalCanal = new Canal(interno.get(seleccionado).getUrl(), interno.get(seleccionado).getTitulo());
+					Canales.seleccionadoPorLista = temporalCanal;
 				}
 			}
 			
@@ -77,7 +80,7 @@ public class ListaCanales extends JList implements Runnable{
 				vTitulos[i] = interno.get(i).getTitulo();
 			}//ahora guardamos
 			this.setListData(vTitulos);
-			
+			//ahora debemos guardar en lista de archivos
 			System.out.println("(Away)[ListaCanales] lanzamiento de thread exitoso");
 		}
 	}

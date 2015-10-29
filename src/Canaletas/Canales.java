@@ -16,6 +16,7 @@ public class Canales {
 	private static Vector<Canal> listCanales=new Vector();
 	private static String SutaDato = "/predata/fileObjectRSS.obj";
 	static int semilla = 0;
+	public static Canal seleccionadoPorLista;
 	
 	
 	public static void cargar() throws IOException, ClassNotFoundException {
