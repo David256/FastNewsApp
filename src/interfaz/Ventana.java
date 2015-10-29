@@ -3,6 +3,7 @@ package interfaz;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
@@ -86,7 +87,17 @@ public class Ventana extends JFrame{
 		aside.add(abtnEliminar);
 		
 		abtnAgregar.addActionListener(new BtnAsideAccion(listaCanales));
-		abtnEditar.addActionListener(new BtnAsideAccion(listaCanales));
+		//cambiamos los btn para ejecutar el código aquí
+		abtnEditar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg) {
+				// TODO Auto-generated method stub
+				listaCanales.remove( listaCanales.getSelectedIndex() );
+				System.out.println("[Ventana][Action Delete] elminando el elemento seleccionado");
+			}
+			
+		});
 		abtnEliminar.addActionListener(new BtnAsideAccion(listaCanales));
 		
 		aside.add(tituloListaCanales);
