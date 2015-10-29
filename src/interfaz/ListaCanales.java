@@ -52,6 +52,12 @@ public class ListaCanales extends JList implements Runnable{
 	}
 
 	@Override
+	public void remove(int index){
+		interno.remove(index);
+		super.remove(index);
+		System.out.println("-> [Override(-Remove-)].JList");
+	}
+	@Override
 	public void run() {
 		
 		while(true){
