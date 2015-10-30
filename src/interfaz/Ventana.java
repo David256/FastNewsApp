@@ -100,7 +100,7 @@ public class Ventana extends JFrame{
 		
 		abtnAgregar.addActionListener(new BtnAsideAccion(listaCanales));
 		//cambiamos los btn para ejecutar el código aquí
-		abtnEditar.addActionListener(new ActionListener(){
+		abtnEliminar.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg) {
@@ -110,7 +110,17 @@ public class Ventana extends JFrame{
 			}
 			
 		});
-		abtnEliminar.addActionListener(new BtnAsideAccion(listaCanales));
+		//abtnEliminar.addActionListener(new BtnAsideAccion(listaCanales));
+		
+		abtnEditar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				System.out.println("[Ventana][Action Editar] editando el elemento seleccionado");
+			}
+			
+		});
 		
 		aside.add(tituloListaCanales);
 		aside.add(listaCanales);
