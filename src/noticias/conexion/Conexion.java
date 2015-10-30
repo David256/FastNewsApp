@@ -27,9 +27,8 @@ public class Conexion {
 			char[] buffer = new char[1000];
 			int leido;
 			
-			while((leido = br.read(buffer)) > 0){
+			while(br.readLine() != null){
 				dato = dato + br.readLine();
-				
 				//dato = dato + leido;
 				System.out.println("Leyendo...");
 			}
