@@ -130,6 +130,8 @@ public class Ventana extends JFrame{
 		this.add(papel);
 		this.prepararMenu();
 		this.setJMenuBar(miMenu);
+		
+		section.starter();
 	}
 	
 	public void prepararMenu() {

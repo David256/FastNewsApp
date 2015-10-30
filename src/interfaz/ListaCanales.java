@@ -38,6 +38,7 @@ public class ListaCanales extends JList implements Runnable{
 					int seleccionado = getSelectedIndex();
 					Canal temporalCanal = new Canal(interno.get(seleccionado).getUrl(), interno.get(seleccionado).getTitulo());
 					Canales.seleccionadoPorLista = temporalCanal;
+					System.out.println("[ListaCanales][OnSelect](saving) se guarda en Canales el canal seleccionado");
 				}
 			}
 			
