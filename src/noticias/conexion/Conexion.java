@@ -14,19 +14,26 @@ public class Conexion {
 		
 		try{
 			//abrimos conexion
+			System.out.println("[Conexion][Starting] desde el mismisimo Needer se llama a Internet >:0 ");
 			URL url = new URL(sUrl);
-			URLConnection conexion = url.openConnection();
-			conexion.connect();
+			System.out.println("[URL:] -> "+sUrl);
+			URLConnection conexiones = url.openConnection();
+			conexiones.connect();
 			
 			//leemos el contenido
-			InputStream is = conexion.getInputStream();
+			InputStream is = conexiones.getInputStream();
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			
 			char[] buffer = new char[1000];
 			int leido;
+			
 			while((leido = br.read(buffer)) > 0){
-				dato = dato + leido;
+				dato = dato + br.readLine();
+				
+				//dato = dato + leido;
+				System.out.println("Leyendo...");
 			}
+			System.out.println("Leído: "+dato);
 		}catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 	        e.printStackTrace();

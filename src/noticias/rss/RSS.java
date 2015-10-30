@@ -31,7 +31,7 @@ public class RSS {
 		dato = job.cargarURL(sUrl);
 		
 		if(dato != ""){
-			return cargarXML(dato);
+			return dato;
 		}else{
 			System.err.println("Error, no puedo leer el archivos");
 		}

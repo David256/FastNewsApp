@@ -61,6 +61,8 @@ public class Ventana extends JFrame{
 		aside = new Aside();
 		section = new TheSection();
 		
+		section.setLayout(null);
+		
 		//vertical scroll para 
 		scroll = new JScrollPane();
 		scroll.setViewportView(section);
