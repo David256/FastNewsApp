@@ -37,6 +37,10 @@ public class ListaCanales extends JList implements Runnable{
 					bocadillo.setVisible(true);
 					*/
 					int seleccionado = getSelectedIndex();
+					if(interno.isEmpty()){
+						System.out.println("[ListaCanales][IsEmpty] El \"interno\" esta vacio aún");
+						return;
+					}
 					Canal temporalCanal = new Canal(interno.get(seleccionado).getUrl(), interno.get(seleccionado).getTitulo());
 					Canales.seleccionadoPorLista = temporalCanal;
 					System.out.println("[ListaCanales][OnSelect](saving) se guarda en Canales el canal seleccionado");
@@ -44,6 +48,7 @@ public class ListaCanales extends JList implements Runnable{
 					//vamos a ver que hay en esa url
 					String uuu = interno.get(seleccionado).getUrl();
 					RSS rss = new RSS();
+					System.out.println("[ListaCanales][OnConnecting] Estamos estableciendo conexion, ¡ESPERE!");
 					String data = rss.cargarURL(new Canal(uuu,""));
 					Canales.mensaje = data;
 				}
