@@ -24,21 +24,22 @@ import org.jdom2.input.SAXBuilder; // |
 public class RSS {
 	Conexion job = new Conexion();
 	
-	public void cargarURL(Canal canal){
+	public String cargarURL(Canal canal){
 		String sUrl = canal.getUrl();
 		
 		String dato = "";
 		dato = job.cargarURL(sUrl);
 		
 		if(dato != ""){
-			cargarXML(dato);
+			return cargarXML(dato);
 		}else{
 			System.err.println("Error, no puedo leer el archivos");
 		}
+		return "";
 		
 	}
 
-	private void cargarXML(String dato) {
+	private String cargarXML(String dato) {
 		//funcion encargada de leer el xml
 		SAXBuilder builder = new SAXBuilder();
 		
@@ -62,17 +63,23 @@ public class RSS {
 			
 			List listItem = elCanal.getChildren("item");
 			System.out.println("Hay items: " + listItem.size());
+			
+			String salidas = "";
+			
 			for (int i=0; i<listItem.size(); i++){
 				Element items = (Element) listItem.get(i);
 				String ti = items.getChildText("title");
 				String des = items.getChildText("description");
 				String lnk = items.getChildText("link");
-				System.out.println("================================================================");
-				System.out.println("[+]\t"+ti);
-				System.out.println("Más info: "+lnk);
-				System.out.println("\r\n"+des);
-				System.out.println("<-----------------");
+				salidas = salidas + "================================================================";
+				salidas = salidas + "[+]\t"+ti;
+				salidas = salidas + "Más info: "+lnk;
+				salidas = salidas + "\r\n"+des;
+				salidas = salidas + "<-----------------";
 			}
+			System.out.println("[RSS][Conexion] buscando datos de url");
+			//return salidas;
+			return dato;
 			
 		}catch(Exception e){
 			System.out.println("Error");
@@ -80,7 +87,7 @@ public class RSS {
 		
 		///////////////////////////////////////////////////////////
 		
-		
+		return "";
 	}
 
 	public void starter() {

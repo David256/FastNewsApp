@@ -10,6 +10,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import noticias.rss.Canal;
+import noticias.rss.RSS;
 import Canaletas.Canales;
 
 //Esta es la clase que se encarga de manejar el listado de canales
@@ -39,6 +40,12 @@ public class ListaCanales extends JList implements Runnable{
 					Canal temporalCanal = new Canal(interno.get(seleccionado).getUrl(), interno.get(seleccionado).getTitulo());
 					Canales.seleccionadoPorLista = temporalCanal;
 					System.out.println("[ListaCanales][OnSelect](saving) se guarda en Canales el canal seleccionado");
+					
+					//vamos a ver que hay en esa url
+					String uuu = interno.get(seleccionado).getUrl();
+					RSS rss = new RSS();
+					String data = rss.cargarURL(new Canal(uuu,""));
+					Canales.mensaje = data;
 				}
 			}
 			

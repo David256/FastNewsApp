@@ -20,7 +20,7 @@ import Canaletas.Canales;
 public class FastNews {
 	
 	static Ventana ventana;
-	static RSS rr;
+	//static RSS rr;
 	 
 	
 	public static void main(String[] args) {
@@ -47,7 +47,7 @@ public class FastNews {
 			e1.printStackTrace();
 		}
 		
-		rr.cargarURL((Canales.dar()));
+		//rr.cargarURL((Canales.dar()));
 	}
 		
 	public static void cerrar(){
