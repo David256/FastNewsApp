@@ -90,6 +90,10 @@ public class CajaDialogo extends JFrame{
 				System.out.println("[CajaDialogo] adding: " + entrada[0].getText() + ", " + entrada[1].getText());
 				Canales.agregarRSS(entrada[0].getText(), entrada[1].getText());
 				dispose();
+				System.out.println("[CajaDialogo][AgregarCanal](saving out) guardaremos en el archivo :3");
+				//me intriga el orden de esto, no se porque se supone que primero la url luego el titulo
+				//pero esta saliendo al reves cuando se carga desde archivo
+				Canales.guardarRSS(entrada[0].getText(), entrada[1].getText());
 			}
 		});
 	}

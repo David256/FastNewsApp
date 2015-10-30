@@ -14,7 +14,7 @@ import noticias.rss.Canal;
 public class Canales {
 	
 	private static Vector<Canal> listCanales=new Vector();
-	private static String SutaDato = "/predata/fileObjectRSS.obj";
+	private static String SutaDato = "predata/fileObjectRSS.obj";
 	static int semilla = 0;
 	public static Canal seleccionadoPorLista = new Canal("","");
 	
@@ -59,17 +59,18 @@ public class Canales {
 		//agregamos a la lista del archivo
 		//guardarRSS(url, titulo); no vamos a guardar hasta luego
 	}
-	private static void guardarRSS(String url, String titulo) {
+	public static void guardarRSS(String url, String titulo) {
 		// Guarda el RSS en el archivo
 		try {
 			File saver = new File(SutaDato);
 			saver.createNewFile();
 			if(!(saver.canWrite() || saver.canRead())){
-				System.err.println("Error, no puedo guardar o escribir");
+				System.err.println("[Canales][GuardarRSS] Error, no puedo guardar o escribir");
 			}
 			//ahorramos codigo pero aumentamos la dificiltad		
 			ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(saver));
 			salida.writeObject(new Canal(url, titulo));
+			salida.close();
 			
 		} catch (FileNotFoundException e) {
 			System.err.println("Error al intentar abrir el archivo donde se guardan los objetos Canal");
