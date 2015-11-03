@@ -41,6 +41,7 @@ public class ListaCanales extends JList implements Runnable{
 						System.out.println("[ListaCanales][IsEmpty] El \"interno\" esta vacio aún");
 						return;
 					}
+					System.out.println("Se seleccionó el elemento "+seleccionado);
 					Canal temporalCanal = new Canal(interno.get(seleccionado).getUrl(), interno.get(seleccionado).getTitulo());
 					Canales.seleccionadoPorLista = temporalCanal;
 					System.out.println("[ListaCanales][OnSelect](saving) se guarda en Canales el canal seleccionado");
