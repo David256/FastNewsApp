@@ -16,23 +16,23 @@ public class Conexion {
 			//abrimos conexion
 			System.out.println("[Conexion][Starting] desde el mismisimo Needer se llama a Internet >:0 ");
 			URL url = new URL(sUrl);
-			System.out.println("[URL:] -> "+sUrl);
-			URLConnection conexiones = url.openConnection();
-			conexiones.connect();
+			InputStreamReader isReader = new InputStreamReader(url.openStream());
+			BufferedReader bReader = new BufferedReader(isReader);
+			StringBuffer buffer = new StringBuffer();
 			
-			//leemos el contenido
-			InputStream is = conexiones.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			String linealURL = "";
 			
-			char[] buffer = new char[1000];
-			int leido;
-			
-			while(br.readLine() != null){
-				dato = dato + br.readLine();
-				//dato = dato + leido;
-				System.out.println("Leyendo...");
+			while((linealURL = bReader.readLine()) != null){
+				buffer.append(linealURL);
 			}
+			bReader.close();
+			isReader.close();
+			
+			dato = buffer.toString();
+			
+			System.out.println("[URL:] -> "+sUrl);
 			System.out.println("Leído: "+dato);
+			
 		}catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 	        e.printStackTrace();
