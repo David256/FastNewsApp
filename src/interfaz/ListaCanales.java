@@ -51,6 +51,7 @@ public class ListaCanales extends JList implements Runnable{
 					System.out.println("[ListaCanales][OnConnecting] Estamos estableciendo conexion, ¡ESPERE!");
 					String data = rss.cargarURL(new Canal(uuu,""));
 					Canales.mensaje = data;
+					//alli se guardaron los datos procesados de la URL
 				}
 			}
 			
