@@ -53,7 +53,7 @@ public class Ventana extends JFrame{
 	public static BotonAside abtnAgregar;
 	
 	//para la lista de canales
-	public String [] nombreCorto = {"Vacio","No hay nada", "Chao"};
+	public String [] nombreCorto = {""}; //Vacio","No hay nada", "Chao
 	
 	//cosas de la parte principal
 	

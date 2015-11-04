@@ -6,6 +6,7 @@ import java.io.File;
 
 
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -40,20 +41,35 @@ public class RSS {
 	}
 
 	private String cargarXML(String dato) {
+		//vamos a intentar guardar en archivo
+		File archivo = new File("./predata/demostrar.xml");
+		try{
+			FileWriter escritor = new FileWriter(archivo, true);
+			escritor.write(dato);
+			escritor.close();
+		}catch(Exception e){
+			System.err.println("No puedo abrir el archivo de XML desde el RSS");
+		}
+		//volvemos a abrir
+		
 		//funcion encargada de leer el xml
 		SAXBuilder builder = new SAXBuilder();
 		
 		System.out.println("---[[[");
+		System.out.println("Datos de hoy:\n"+dato+"\n");
 		
 		String paquete = "";
-		
-		try{
+		try{ 
 			// se obtiene el documento a partir del archivos
-			Document document = (Document) builder.build(dato);
+			Document document = (Document) builder.build(archivo); //cambiado de dato a archivo
 			//se obtiene la raiz de nodos
 			Element rootNode = document.getRootElement();
 			//se obtiene la lista de nodos de la raiz
-			List list = rootNode.getChildren("channel");
+			
+			List elRSS = rootNode.getChildren("rss");
+			Element channeling = (Element) elRSS.get(0); //escojemos el primero
+			
+			List list = channeling.getChildren("channel");
 			System.out.println("No. canales: " + list.size());
 			//podia seguir el tutorial, pero voy a hacerlo solo
 			
@@ -89,7 +105,7 @@ public class RSS {
 			paquete = paquete + salidas; //guardamos toda la salida
 			
 			System.out.println("[RSS][Conexion] buscando datos de url");
-						
+
 			System.out.println("]]]---");
 			return paquete;
 			
