@@ -14,14 +14,12 @@ public class BtnAsideAccion implements ActionListener{
 	public ListaCanales listaCanales = null;
 		
 	public BtnAsideAccion(ListaCanales listaCanales) {
-		// TODO Auto-generated constructor stub
 		//listaCanales.getSelectedIndex();
 		this.listaCanales = listaCanales;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent elClick) {
-		// TODO Auto-generated method stub
 		System.out.println("[Escucha][BTN][ASIDE] se pincho action. ");
 		
 		if(elClick.getSource()==Ventana.abtnAgregar){

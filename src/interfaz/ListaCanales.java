@@ -27,7 +27,6 @@ public class ListaCanales extends JList implements Runnable{
 
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
-				// TODO Auto-generated method stub
 				if(getValueIsAdjusting()){
 					System.out.println("[ListaCanales][OnSelect] se selecciono algo");
 					/*
@@ -81,7 +80,6 @@ public class ListaCanales extends JList implements Runnable{
 			try {
 				Thread.sleep(4000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				System.err.println("[ListaCanales][RUN] Error en el Thread.sleep(n) _");
 				e.printStackTrace();
 			}

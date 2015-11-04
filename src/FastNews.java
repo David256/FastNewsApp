@@ -24,7 +24,6 @@ public class FastNews {
 	 
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		ventana = new Ventana(); //este objeto maneja la ventana
 		ventana.mostrar();
 		ventana.setTitle("Fast News App - by David");
@@ -40,10 +39,8 @@ public class FastNews {
 		try {
 			Canales.cargar();
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		

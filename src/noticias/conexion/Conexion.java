@@ -34,10 +34,8 @@ public class Conexion {
 			System.out.println("Leído: "+dato);
 			
 		}catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 	        e.printStackTrace();
 		}catch (IOException e) {
-	        // TODO Auto-generated catch block
 	        e.printStackTrace();	
 		}catch(Exception e){
 			System.out.println("Error desconocido ** : " + e.toString());

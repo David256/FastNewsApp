@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
 import acciones.menuAccion;
@@ -66,8 +67,9 @@ public class Ventana extends JFrame{
 		section.setLayout(null);
 		
 		//vertical scroll para 
-		scroll = new JScrollPane();
-		scroll.setViewportView(section);
+		scroll = new JScrollPane(section,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		//scroll.setViewportView(section);
+		
 		
 		papel.cargarImagen();
 		miMenu = new BarraMenu();
@@ -149,7 +151,6 @@ public class Ventana extends JFrame{
 	}
 	
 	public void prepararMenu() {
-		// TODO Auto-generated method stub
 		//objetos de JMenu
 		menuArchivo = new JMenu("Archivo");
 		menuAcceso = new JMenu("Acceso");
@@ -183,7 +184,6 @@ public class Ventana extends JFrame{
 	}
 
 	public void centrarVentana() {
-		// TODO Auto-generated method stub
 		int anchoW = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 		int altoW = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
 		int lugarX = (anchoW / 2) - (X / 2);
