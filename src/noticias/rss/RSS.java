@@ -43,6 +43,10 @@ public class RSS {
 		//funcion encargada de leer el xml
 		SAXBuilder builder = new SAXBuilder();
 		
+		System.out.println("---[[[");
+		
+		String paquete = "";
+		
 		try{
 			// se obtiene el documento a partir del archivos
 			Document document = (Document) builder.build(dato);
@@ -52,10 +56,13 @@ public class RSS {
 			List list = rootNode.getChildren("channel");
 			System.out.println("No. canales: " + list.size());
 			//podia seguir el tutorial, pero voy a hacerlo solo
+			
 			Element elCanal = (Element) list.get(0);
 			String titulo = elCanal.getChildText("title");
 			String descripcion = elCanal.getChildText("description");
 			String link = elCanal.getChildText("link");
+			
+			paquete = paquete + titulo + ":\n" + "(" + descripcion + " -" + link + " -)"; //guardamos en paquete
 			
 			System.out.println("titulo: " + titulo);
 			System.out.println("link: " + link);
@@ -64,6 +71,8 @@ public class RSS {
 			List listItem = elCanal.getChildren("item");
 			System.out.println("Hay items: " + listItem.size());
 			
+			paquete = paquete + "\n" + "<" + listItem.size() + ">"; //volvemos a guardar en paquete
+			
 			String salidas = "";
 			
 			for (int i=0; i<listItem.size(); i++){
@@ -71,22 +80,25 @@ public class RSS {
 				String ti = items.getChildText("title");
 				String des = items.getChildText("description");
 				String lnk = items.getChildText("link");
-				salidas = salidas + "================================================================";
-				salidas = salidas + "[+]\t"+ti;
-				salidas = salidas + "Más info: "+lnk;
-				salidas = salidas + "\r\n"+des;
-				salidas = salidas + "<-----------------";
+				salidas = salidas + "__________________________________________________________";
+				salidas = salidas + "[+] "+ti;
+				salidas = salidas + "(Más info: "+lnk + ")";
+				salidas = salidas + "\n"+des;
+				salidas = salidas + "<----------------------------------------\n";
 			}
+			paquete = paquete + salidas; //guardamos toda la salida
+			
 			System.out.println("[RSS][Conexion] buscando datos de url");
-			//return salidas;
-			return dato;
+						
+			System.out.println("]]]---");
+			return paquete;
 			
 		}catch(Exception e){
-			System.out.println("Error");
+			System.err.println("Error, Por tal motivo no puedo leer XML: " + e.toString());
 		}
 		
 		///////////////////////////////////////////////////////////
-		
+		System.out.println("]]]---");
 		return "";
 	}
 
