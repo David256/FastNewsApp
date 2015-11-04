@@ -91,7 +91,7 @@ public class RSS {
 	}
 
 	public void starter() {
-		// TODO Auto-generated method stub		
+		// TODO Terminar clase RSS		
 	}
 
 }
